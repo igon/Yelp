@@ -18,7 +18,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 127
+tableView.estimatedRowHeight = 127
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -31,7 +31,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             }
         })
         
-        Business.searchWithTerm("Restaurants", sort: .Distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("Restaurants", sort: .Distance, categories: ["italian", "burgers"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             self.tableView.reloadData()
             
@@ -42,7 +42,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             */
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
