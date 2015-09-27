@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yelp/FiltersViewController.swift"
+            timestampString = "465090060.107265"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "FiltersViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yelp.FiltersViewController.__deallocating_deinit"
+                  moduleName = "Yelp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivang/Documents/Personal/CodePath/HomeWork/Yelp/Yelp/FiltersViewController.swift"
+                  timestampString = "465019569.139938"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yelp.FiltersViewController.init (Yelp.FiltersViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; Yelp.FiltersViewController"
+                  moduleName = "Yelp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivang/Documents/Personal/CodePath/HomeWork/Yelp/Yelp/FiltersViewController.swift"
+                  timestampString = "465019569.141217"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "58">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Yelp.FiltersViewController.init (Yelp.FiltersViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; Swift.Optional&lt;Yelp.FiltersViewController&gt;"
+                  moduleName = "Yelp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ivang/Documents/Personal/CodePath/HomeWork/Yelp/Yelp/FiltersViewController.swift"
+                  timestampString = "465019569.14136"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Yelp/FiltersViewController.swift"
+            timestampString = "465090060.107265"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "switchCell(_:didChangeValue:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
