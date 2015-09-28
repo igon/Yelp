@@ -24,6 +24,7 @@ class FiltersViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         categories = yelpCategories()
         tableView.delegate = self
         tableView.dataSource = self

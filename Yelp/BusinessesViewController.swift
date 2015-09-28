@@ -8,20 +8,37 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FiltersViewControllerDelegate {
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FiltersViewControllerDelegate, UISearchResultsUpdating {
 
     @IBOutlet weak var tableView: UITableView!
 
     var businesses: [Business]!
+    var searchController: UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Initializing with searchResultsController set to nil means that
+        // searchController will use this view controller to display the search results
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        
+        // If we are using this same view controller to present the results
+        // dimming it out wouldn't make sense.  Should set probably only set
+        // this to yes if using another controller to display the search results.
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        searchController.searchBar.sizeToFit()
+        
+        navigationItem.titleView = searchController.searchBar
+        searchController.hidesNavigationBarDuringPresentation = false
+        
         tableView.rowHeight = UITableViewAutomaticDimension
-tableView.estimatedRowHeight = 127
+        tableView.estimatedRowHeight = 127
         tableView.delegate = self
         tableView.dataSource = self
-
+        tableView.tableHeaderView = searchController.searchBar
+        
         Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             
@@ -41,6 +58,9 @@ tableView.estimatedRowHeight = 127
             }
             */
         }
+        
+        // Sets this view controller as presenting view controller for the search interface
+        definesPresentationContext = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,6 +107,17 @@ tableView.estimatedRowHeight = 127
             self.businesses = business
             self.tableView.reloadData()
         }
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchText = searchController.searchBar.text
+        
+        Business.searchWithTerm(searchText!, sort: nil, categories: nil, deals: nil)
+            {(business: [Business]!, error: NSError!) -> Void in
+                self.businesses = business
+                self.tableView.reloadData()
+        }
+        tableView.reloadData()
     }
 
 }
