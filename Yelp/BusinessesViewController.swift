@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FiltersViewControllerDelegate, UISearchResultsUpdating {
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SearchSelectionFilterTableViewControllerDelegate, UISearchResultsUpdating {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -93,14 +93,29 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         // Pass the selected object to the new view controller.
         let navigationController = segue.destinationViewController as! UINavigationController
         
-        let filtersViewController = navigationController.topViewController as! FiltersViewController
+        let filtersViewController = navigationController.topViewController as! SearchSelectionFilterTableViewController
         
         filtersViewController.delegate = self
     }
 
+    func triggerSearchWithValues(dealPref: Bool?, distance: String?, sortBy: String?, category: String?) {
+        // todo
+        
+        var categoryA:[String]?
+        if category != nil {
+            categoryA = [category!]
+        }
+        
+        Business.searchWithTerm("Restaurant", sort: nil, categories: categoryA, deals: dealPref)
+            {(business: [Business]!, error: NSError!) -> Void in
+                self.businesses = business
+                self.tableView.reloadData()
+        }
+    }
+    
     func filtersViewController(filtersViewController: FiltersViewController, didUpdateFilters filters: [String : AnyObject]) {
         
-        var categories  = filters["categories"] as? [String]
+        let categories  = filters["categories"] as? [String]
         
         Business.searchWithTerm("Restaurant", sort: nil, categories: categories, deals: nil)
             {(business: [Business]!, error: NSError!) -> Void in
